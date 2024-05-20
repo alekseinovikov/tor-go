@@ -95,10 +95,9 @@ func (m uiModel) View() string {
 		s.WriteString(m.filepicker.Styles.DisabledFile.Render(m.err.Error()))
 	} else if !m.selected {
 		s.WriteString("Pick a file:")
-	} else if m.selected {
-		s.WriteString("Selected file is downloading... ")
-	} else {
 		s.WriteString("\n\n" + m.filepicker.View() + "\n")
+	} else {
+		s.WriteString("Selected file is downloading... ")
 	}
 
 	return s.String()
